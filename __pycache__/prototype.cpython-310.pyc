@@ -1,0 +1,80 @@
+o
+    ©{ cÿ	  ã                   @   s4  d dl mZ d dlmZ d dlmZ d dlm Z mZmZm	Z	 d dl
+Z
+e dd dd	Z
+d
+e
+_e
+ 
+d
+¡Zd
+Ze
+ d¡d
+d„ ƒZe
+jdddgddd„ ƒZe
+jdddgddd„ ƒZe
+jdddgddd„ ƒZe
+ d¡dd„ ƒZe
+ d¡dd „ ƒZe
+ d!¡d"d#„ ƒZe
+ d$¡d%d&„ ƒZe
+ d'¡d(d)„ ƒZe
+jd*d+d,d- dS ).é    )ÚTRUE)Úfinal)Ú request)ÚFlaskÚrender_templater   Ú sessionNZ__FoodOrderSystem__Z	templatesÚstatic)Ztemplate_folderZ
+static_folderZDgjoewheighez
+foodsystem.dbú/c                   C   s   t dddS )Nz
+index.htmlzFood Order System)Útitle©r   © r   r   ú>C:\Users\Finnald\Documents\GitHub\FoodOrderSystem\prototype.pyÚindex
+   s   r   z/loginÚGETÚPOST)Ú methodsc                
+   C   s  t jdkr|t tdƒ zdzGtdƒ t jd } t jd }t jd }t jd  }t t ¡ }| ¡ }| 	d| |||f¡ | 
+¡  td	ƒ d
+}W d   ƒ n1 sMw   Y  W n   | 
+¡  td
+ƒ d}Y W td
+|dS W td
+|dS td
+|d     Y S t jdkr…td
+ƒS d S )Nr   zOpened database successfullyZtryingznew-usernamez new-pwdÚfnameÚlnamezHINSERT INTO Users (UserName,FirstName,LastName,Password) VALUES(?,?,?,?)ZsucczAccount created successfullyZbadzCreation failed, try againz
+login.html)Úmsgr   )
+r   ÚmethodÚconnÚprintÚformÚ sqlite3Ú connectÚdbZcursorZ executeZcommitZrollbackr   ) Z newUserZnewPwdr   r   ZconÚcurr   r   r   r
+   Úlogin   s6   
+
+
+
+
+û€€$ 
+ÿr   z/createaccountc                   C   ó   t dƒS )Nz
+signup.htmlr
+   r   r   r   r
+   Ú
+createaccount-   ó   r   z/retail/optionsc                  C   sZ   t jdkrt jtd< td } | d }td|dS t jdkr+td } | d }td|dS d S ) Nr   r   Úusernamez
+retail.html)r!   r   )r   r   r   r    r   )r   r!   r   r   r
+   Ú options2   s   
+
+
+ır"   z/retail/createorderc                   C   r   )Nz
+neworder.htmlr
+   r   r   r   r
+   Ú
+createorder>   r    r#   z/user/pastordersc                   C   r   )Nzviewporders.htmlr
+   r   r   r   r
+   ÚviewpastordersB   r    r$   z/staffc                   C   r   )Nz
+staff.htmlr
+   r   r   r   r
+   ÚstaffoptionsF   r    r%   z/staff/allordersc                   C   r   )Nz
+staffAll.htmlr
+   r   r   r   r
+   ÚreviewordersJ   r    r&   z/retail/cartc                   C   r   )Nz	cart.html r
+   r   r   r   r
+   ÚcheckoutN   r    r'   z 0.0.0.0éQ   T)ÚhostÚportÚdebug)Úpickler   Útypingr   Úurllibr   Úflaskr   r   r    r   ÚappZ
+secret_keyr   r   r   Zrouter   r   r   r"   r#   r$   r%   r&   r'   Úrunr   r   r   r
+   Ú<module>   s8    
+
+
+
+
+
+
+
+
+
+
+
